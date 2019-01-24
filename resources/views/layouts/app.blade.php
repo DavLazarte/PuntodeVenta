@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Santa Paz Ventas</title>
+    <title>Punto Limite Ventas</title>
 
     <!-- Fonts -->
     <!-- Font Awesome -->
@@ -48,8 +48,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><img src="{{url('../img/logo.jpeg')}}" style="width:200px;height:70px;" alt="logo"></li>
-                    <li><a href="{{ url('/home') }}">Inicio</a></li>
+
+                    {{-- <li><img src="{{url('../img/logo.jpeg')}}" style="width:200px;height:70px;" alt="logo"></li> --}}
+                    <li><a href="{{ url('/home') }}">PUNTO LIMITE </a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
