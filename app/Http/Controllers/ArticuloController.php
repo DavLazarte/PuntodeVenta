@@ -28,7 +28,7 @@ class ArticuloController extends Controller
             $query=trim($request->get('searchText'));
             $articulos=DB::table('articulo as a')
             ->join('categoria as c','a.idcategoria','=','c.idcategoria')
-            ->select('a.idarticulo','a.nombre','a.codigo','a.stock','c.nombre as categoria','a.descripcion','a.imagen','a.estado')
+            ->select('a.idarticulo','a.nombre','a.codigo','a.stock','c.nombre as categoria','a.descripcion','a.precio','a.estado')
             ->where('a.nombre','LIKE','%'.$query.'%')
             ->orwhere('c.nombre','LIKE','%'.$query.'%')
             ->orwhere('a.codigo','LIKE','%'.$query.'%')
@@ -47,9 +47,10 @@ class ArticuloController extends Controller
         $articulo=new Articulo;
         $articulo->idcategoria=$request->get('idcategoria');
         $articulo->codigo=$request->get('codigo');
-        // $articulo->nombre=$request->get('nombre');
+        $articulo->nombre=$request->get('nombre');
         $articulo->stock=$request->get('stock');
         $articulo->descripcion=$request->get('descripcion');
+        $articulo->precio=$request->get('precio');
         $articulo->estado='disponible';
 
         // if (Input::hasFile('imagen')){
@@ -80,8 +81,10 @@ class ArticuloController extends Controller
 
         $articulo->idcategoria=$request->get('idcategoria');
         $articulo->codigo=$request->get('codigo');
+        $articulo->nombre=$request->get('nombre');
         $articulo->stock=$request->get('stock');
         $articulo->descripcion=$request->get('descripcion');
+        $articulo->precio=$request->get('precio');
         $articulo->estado=$request->get('estado');
         // if (Input::hasFile('imagen')){
         // 	$file=Input::file('imagen');

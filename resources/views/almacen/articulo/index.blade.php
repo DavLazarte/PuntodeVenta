@@ -26,8 +26,9 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					<th>Código</th>
-					<th>Descripción</th>
-					<th>Categoría</th>
+					<th>Nombre</th>
+					<th>Talle</th>
+					<th>Stock</th></th>
 					<th>Precio</th>
 					<th>Estado</th>
 					<th>Opciones</th>
@@ -35,9 +36,10 @@
                @foreach ($articulos as $art)
 				<tr>
 					<td>{{ $art->codigo}}</td>
+					<td>{{ $art->nombre}}</td>
 					<td>{{ $art->descripcion}}</td>
-					<td>{{ $art->categoria}}</td>
 					<td>{{ $art->stock}}</td>
+					<td>{{ $art->precio}}</td>
 					<td>{{ $art->estado}}</td>
 					{{-- Columna de imagenes --}}
 					{{-- <td>

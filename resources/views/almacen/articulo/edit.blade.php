@@ -18,12 +18,6 @@
         {!!Form::model($articulo,['method'=>'PATCH','route'=>['almacen.articulo.update',$articulo->idarticulo],'files'=>'true'])!!}
         {{Form::token()}}
     <div class="row">
-        {{-- <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" required value="{{$articulo->nombre}}" class="form-control">
-            </div>
-        </div> --}}
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
                 <label>Categoría</label>
@@ -38,13 +32,21 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="descripcion">Descripción</label>
-                <input type="text" name="descripcion" value="{{$articulo->descripcion}}" class="form-control" placeholder="Descripción de la prenda">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" required value="{{$articulo->nombre}}" class="form-control">
             </div>
             <div class="form-group">
-                <label for="stock">Precio</label>
+                <label for="descripcion">Talle</label>
+                <input type="text" name="descripcion" value="{{$articulo->descripcion}}" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock</label>
                 <input type="text" name="stock" required value="{{$articulo->stock}}" class="form-control">
             </div>
+            <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="text" name="precio" required value="{{$articulo->precio}}" class="form-control">
+                </div>
             <div class="form-group">
                 <label for="estado">Estado</label>
                 <input type="text" name="estado" required value="{{$articulo->estado}}" class="form-control">
@@ -58,16 +60,16 @@
                 @endif
             </div>
         </div> --}}
-            <div class="form-group">
-                <label for="codigo">Código</label>
-                <input type="text" name="codigo" id="codigobar" required value="{{$articulo->codigo}}" class="form-control">
-                <br>
+        <div class="form-group">
+            <label for="codigo">Código</label>
+            <input type="text" name="codigo" id="codigobar" required value="{{$articulo->codigo}}" class="form-control">
+            {{-- 
+            <br>
                 <button class="btn btn-success" type="button" onclick="generarBarcode()">Generar</button>
                 <button class="btn btn-info" onclick="imprimir()"type="button">imprimir</button>
                 <div id="print">
                     <svg id="barcode"></svg>
-                </div>
-                
+                </div>    --}}
             </div>
         </div>
 
