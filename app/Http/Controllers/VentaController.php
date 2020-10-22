@@ -130,7 +130,7 @@ class VentaController extends Controller
 
         $detalles=DB::table('detalle_venta as d')
              ->join('articulo as a','d.idarticulo','=','a.idarticulo')
-             ->select('a.descripcion as articulo','d.cantidad','d.descuento','d.precio_venta')
+             ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta')
              ->where('d.idventa','=',$id)
              ->get();
         return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
@@ -185,7 +185,7 @@ class VentaController extends Controller
 
         $detalles=DB::table('detalle_venta as d')
              ->join('articulo as a','d.idarticulo','=','a.idarticulo')
-             ->select('a.descripcion as articulo','d.cantidad','d.descuento','d.precio_venta')
+             ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta')
              ->where('d.idventa','=',$id)
              ->get();
 
@@ -193,7 +193,7 @@ class VentaController extends Controller
         $pdf = new Fpdf();
         $pdf::AddPage();
         $pdf::SetFont('Arial','B',14);
-        $pdf::Image('..\public\img\logo.jpeg',5,5,60);
+        // $pdf::Image('..\public\img\logo.jpeg',5,5,60);
         //Inicio con el reporte
         $pdf::SetXY(150,20);
         $pdf::Cell(0,0,utf8_decode('Tipo de Venta:'.$venta->tipo_comprobante));
